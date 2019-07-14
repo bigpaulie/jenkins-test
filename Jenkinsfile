@@ -1,16 +1,18 @@
 pipeline {
-  agent none
-  stages {
-    stage('Test') {
-      agent {
-        node {
-          label 'phpunit'
+    agent none
+    stages {
+
+        stage('Composer Install') {
+            sh 'composer install'
         }
 
-      }
-      steps {
-        echo 'cucu meu'
-      }
+        stage("PHPLint") {
+            sh 'find app -name "*.php" -print0 | xargs -0 -n1 php -l'
+        }
+
+        stage("PHPUnit") {
+            sh 'vendor/bin/phpunit'
+        }
+
     }
-  }
 }
