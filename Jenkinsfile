@@ -3,11 +3,15 @@ pipeline {
     stages {
 
         stage('Composer Install') {
-            sh 'composer install'
+            steps {
+                sh 'composer install'
+            }
         }
 
         stage("PHPUnit") {
-            sh 'vendor/bin/phpunit'
+            steps {
+                sh 'vendor/bin/phpunit'
+            }
         }
 
     }
