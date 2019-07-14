@@ -13,7 +13,7 @@ pipeline {
     }
     stage('phpunit') {
       steps {
-        sh 'docker run -v $(pwd):/app bigpaulie/jenkins bash -c \'php ./vendor/bin/phpunit\''
+        sh 'docker run -v $(pwd):/app bigpaulie/jenkins'
       }
     }
   }
