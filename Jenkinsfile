@@ -2,7 +2,7 @@ pipeline {
     agent none
     stages {
         stage('Test') {
-            agent { label 'unittest' }
+            agent { label 'phpunit' }
             steps {
                 echo 'cucu'
             }
