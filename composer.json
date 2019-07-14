@@ -1,0 +1,28 @@
+{
+    "name": "bigpaulie/jenkins-test",
+    "description": "Test",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^8.2",
+        "mockery/mockery": "^1.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paul",
+            "email": "bigpaulie25ro@yahoo.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "bigpaulie\\jenkins\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "bigpaulie\\jenkins\\test\\": "tests/"
+        }
+    }
+}
