@@ -4,6 +4,7 @@ pipeline {
     stage('Pull From Git') {
       steps {
         sh 'git clone https://github.com/bigpaulie/jenkins-test.git'
+        cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, deleteDirs: true)
       }
     }
     stage('phpunit') {
@@ -13,7 +14,7 @@ pipeline {
             dir(path: 'jenkins-test')
           }
         }
-        stage('') {
+        stage('error') {
           steps {
             sh 'docker run -v $(pwd):/app --rm phpunit/phpunit run'
           }
