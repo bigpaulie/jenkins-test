@@ -1,6 +1,8 @@
 pipeline {
     agent any
-    stage('checkout') {
-        checkout()
+    stages {
+        stage('checkout') {
+            checkout()
+        }
     }
 }
