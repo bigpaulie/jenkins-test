@@ -15,15 +15,16 @@ pipeline {
         }
 
         stage("Publish Coverage") {
-            publishHTML (target: [
+            steps {
+                publishHTML (target: [
                     allowMissing: false,
                     alwaysLinkToLastBuild: false,
                     keepAll: true,
                     reportDir: 'build/coverage',
                     reportFiles: 'index.html',
                     reportName: "Coverage Report"
-
-            ])
+                ])
+            }
         }
 
     }
