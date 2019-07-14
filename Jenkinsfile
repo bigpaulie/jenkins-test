@@ -10,7 +10,7 @@ pipeline {
 
         stage("PHPUnit") {
             steps {
-                sh 'vendor/bin/phpunit --log-junit junit.xml'
+                sh 'vendor/bin/phpunit --log-junit build/reports/junit.xml'
             }
         }
 
