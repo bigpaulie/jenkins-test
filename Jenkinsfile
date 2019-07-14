@@ -1,11 +1,16 @@
 pipeline {
-    agent none
-    stages {
-        stage('Test') {
-            agent { label 'phpunit' }
-            steps {
-                echo 'cucu'
-            }
+  agent none
+  stages {
+    stage('Test') {
+      agent {
+        node {
+          label 'phpunit'
         }
+
+      }
+      steps {
+        echo 'cucu meu'
+      }
     }
+  }
 }
