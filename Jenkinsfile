@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
-        sh 'git clone'
+        sh 'git clone https://github.com/bigpaulie/jenkins-test.git'
       }
     }
   }
