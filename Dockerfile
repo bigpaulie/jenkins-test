@@ -6,9 +6,7 @@ RUN wget https://getcomposer.org/composer.phar && mv composer.phar /usr/bin/comp
 
 WORKDIR app
 COPY ./composer.* ./
+COPY ./phpunit.xml ./
 RUN composer install
 
-COPY ./entrypoint.sh ./
-RUN mv entrypoint.sh /usr/bin/entrypoint.sh && chmod +x /usr/bin/entrypoint.sh
-
-CMD ["entrypoint.sh"]
+CMD ["vendor/bin/phpunit"]
