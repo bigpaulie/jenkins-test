@@ -7,6 +7,6 @@ RUN wget https://getcomposer.org/composer.phar && mv composer.phar /usr/bin/comp
 WORKDIR app
 COPY ./composer.* ./
 COPY ./phpunit.xml ./
-RUN composer install
+RUN composer install && ln -s ./vendor/bin/phpunit /usr/bin/phpunit
 
-CMD ["vendor/bin/phpunit"]
+CMD ["phpunit"]
