@@ -18,14 +18,14 @@ pipeline {
     }
     stage('Publish Coverage') {
       steps {
-        publishHTML([
-                              allowMissing: false,
-                              alwaysLinkToLastBuild: false,
-                              keepAll: true,
-                              reportDir: 'build/coverage',
-                              reportFiles: 'index.html',
-                              reportName: "Coverage Report"
-                          ])
+            publishHTML([
+              allowMissing: false,
+              alwaysLinkToLastBuild: false,
+              keepAll: true,
+              reportDir: 'build/coverage',
+              reportFiles: 'index.html',
+              reportName: "Coverage Report"
+            ])
         }
       }
     }
