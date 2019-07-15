@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'localhost:5000/jenkins/php-unittest' }
+    }
     stages {
 
         stage('Composer Install') {
@@ -10,7 +12,7 @@ pipeline {
 
         stage("PHPUnit") {
             steps {
-                sh 'vendor/bin/phpunit --log-junit build/reports/junit.xml --coverage-html build/coverage'
+                sh '/app/vendor/bin/phpunit --log-junit build/reports/junit.xml --coverage-html build/coverage'
             }
         }
 
