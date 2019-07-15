@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'localhost:5000/jenkins/php-unittest' }
+        docker { image 'localhost:5000/jenkins/phpunit' }
     }
     stages {
 
