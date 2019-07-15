@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'localhost:5000/jenkins/phpunit:rev-1' }
+        docker { image 'localhost:5000/jenkins/phpunit:rev-2' }
     }
     stages {
 
