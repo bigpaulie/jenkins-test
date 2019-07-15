@@ -13,6 +13,7 @@ pipeline {
         stage("PHPUnit") {
             steps {
                 sh './vendor/bin/phpunit --log-junit build/reports/junit.xml --coverage-html build/coverage'
+                sh 'ls -la'
             }
         }
 
